@@ -6,6 +6,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "prepare": "husky install",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -16,10 +17,20 @@
   ],
   "author": "AqingCyan",
   "license": "ISC",
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "eslint --fix"
+    ]
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.35.2",
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
     "@types/node": "^18.14.0",
+    "commitlint": "^17.4.4",
     "eslint": "^8.34.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.2",
     "tsup": "^6.6.3",
     "typescript": "^4.9.5",
     "vitest": "^0.28.5"
